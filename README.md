@@ -20,7 +20,7 @@ yarn husky add .husky/commit-msg
 
 Fill the created files as follow:
 
-**pre-commit**
+### pre-commit
 
 ```bash
 #!/bin/sh
@@ -29,7 +29,7 @@ Fill the created files as follow:
 yarn lint-staged
 ```
 
-**commit-msg**
+### commit-msg
 
 ```bash
 #!/bin/sh
