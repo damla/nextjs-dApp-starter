@@ -37,9 +37,6 @@
     ],
     "./src/**/*.{js,ts,jsx,tsx}": [
       "prettier --write"
-    ],
-    "./src/components/**/*.{js,ts,jsx,tsx}": [
-      "prettier --write"
     ]
   }
 }
