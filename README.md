@@ -8,10 +8,11 @@
 - [tailwindcss](https://tailwindcss.com)
 - [Husky](https://github.com/typicode/husky)
 - [Lint-staged](https://github.com/okonet/lint-staged)
+- [i18n Routing](https://nextjs.org/docs/advanced-features/i18n-routing)
 
 ## Notes
 
-If the husky hooks does not work, delete files found under `.husky` folder and run these commands:
+If the husky hooks do not work, delete files found under the `.husky` folder and run these commands:
 
 ```sh
 yarn husky add .husky/pre-commit
@@ -22,6 +23,8 @@ Fill the created files as follow:
 
 ### pre-commit
 
+Basically, it will do linting on staged files.
+
 ```bash
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
@@ -30,6 +33,8 @@ yarn lint-staged
 ```
 
 ### commit-msg
+
+This will force developer to use [semantic commits](https://gist.github.com/joshbuchea/6f47e86d2510bce28f8e7f42ae84c716).
 
 ```bash
 #!/bin/sh
