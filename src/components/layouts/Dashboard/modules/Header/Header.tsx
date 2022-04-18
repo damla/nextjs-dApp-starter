@@ -1,4 +1,4 @@
-import { toLocaleCamelCase } from '../../../utils/utils';
+import { toLocaleCamelCase } from '../../../../../utils/utils';
 
 interface Props {
   title: string;

@@ -1,27 +1,25 @@
 import Head from 'next/head';
-import { Header, Main, Footer, Nav } from './modules';
+import { Nav, Main, Footer } from './modules';
 
 type Props = {
   children: React.ReactNode;
-  title: string;
 };
 
-const Dashboard = ({ children, title }: Props) => (
+const Landing = ({ children }: Props) => (
   <>
     <Head>
-      <title>Create Next App | Dashboard</title>
+      <title>Create Next App | Home</title>
       <meta
         name="description"
         content="NextJS starter created for developers"
       />
     </Head>
-    <div className="min-h-full">
+    <div className="flex min-h-screen flex-col items-center justify-between bg-white">
       <Nav />
-      <Header title={title} />
       <Main>{children}</Main>
       <Footer />
     </div>
   </>
 );
 
-export default Dashboard;
+export default Landing;

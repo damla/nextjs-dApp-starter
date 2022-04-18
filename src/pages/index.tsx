@@ -1,10 +1,13 @@
 import type { NextPage } from 'next';
-// import { useRouter } from 'next/router';
+import { Landing } from '../components/layouts';
+import { HomePage } from '../components/templates';
 
 const Home: NextPage = () => {
-  // const router = useRouter();
-
-  return <>home</>;
+  return (
+    <Landing>
+      <HomePage />
+    </Landing>
+  );
 };
 
 export default Home;
