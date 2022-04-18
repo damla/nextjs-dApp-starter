@@ -6,7 +6,7 @@ type Props = {
 
 const Home = ({ children }: Props) => (
   <div>
-    <Header />
+    <Header title="home" />
     <Main>{children}</Main>
   </div>
 );
