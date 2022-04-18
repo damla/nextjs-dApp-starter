@@ -9,6 +9,8 @@
 - [Husky](https://github.com/typicode/husky)
 - [Lint-staged](https://github.com/okonet/lint-staged)
 - [i18n Routing](https://nextjs.org/docs/advanced-features/i18n-routing)
+- [headlessUI](https://headlessui.dev)
+- [heroicons](https://heroicons.com)
 
 ## Notes
 
