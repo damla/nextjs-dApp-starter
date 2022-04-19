@@ -7,11 +7,12 @@ const Nav = () => {
   //   { name: 'Profile', href: '#' },
   //   { name: 'Other', href: '#' },
   // ];
-  const { isAuthenticated, authenticate, logout } = useMoralis();
+  const { isAuthenticated, authenticate } = useMoralis();
   const router = useRouter();
 
   useEffect(() => {
     if (isAuthenticated) router.replace('/profile');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   return (
