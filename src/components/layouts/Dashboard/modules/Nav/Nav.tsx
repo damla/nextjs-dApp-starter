@@ -1,18 +1,14 @@
 import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { useMoralis } from 'react-moralis';
 
 const Nav = () => {
-  const user = {
-    name: 'Damla Koksal',
-    email: 'me@damlakoksal.com',
-    imageUrl:
-      'https://images.unsplash.com/photo-1616356257367-9cd4bf56a45e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80',
-  };
+  const { isAuthenticated, logout, user } = useMoralis();
+  const router = useRouter();
+  console.log(user?.get('ethAddress'));
 
   const navigation = [
     { name: 'Profile', href: '#' },
@@ -25,11 +21,9 @@ const Nav = () => {
     { name: 'Sign out', href: '#' },
   ];
 
-  const { isAuthenticated, logout } = useMoralis();
-  const router = useRouter();
-
   useEffect(() => {
     if (!isAuthenticated) router.replace('/');
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isAuthenticated]);
 
   return (
@@ -65,14 +59,14 @@ const Nav = () => {
               </div>
               <div className="hidden md:block">
                 <div className="ml-4 flex items-center md:ml-6">
-                  <Image
+                  {/* <Image
                     height={32}
                     width={32}
                     className="h-8 w-8 rounded-full"
                     src={user.imageUrl}
                     layout="fixed"
                     alt=""
-                  />
+                  /> */}
                 </div>
               </div>
               <div className="-mr-2 flex md:hidden">
@@ -105,20 +99,20 @@ const Nav = () => {
             <div className="pt-4 pb-3 border-t border-gray-700">
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
-                  <Image
+                  {/* <Image
                     height={40}
                     width={40}
                     className="h-10 w-10 rounded-full"
                     src={user.imageUrl}
                     alt=""
-                  />
+                  /> */}
                 </div>
                 <div className="ml-3">
                   <div className="text-base font-medium leading-none text-white">
-                    {user.name}
+                    {user?.get('ethAddress')}
                   </div>
                   <div className="text-sm font-medium leading-none text-gray-400">
-                    {user.email}
+                    {/* {user.email} */}
                   </div>
                 </div>
               </div>
