@@ -2,6 +2,9 @@ import { Disclosure } from '@headlessui/react';
 import { MenuIcon, XIcon } from '@heroicons/react/outline';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+import { useMoralis } from 'react-moralis';
 
 const Nav = () => {
   const user = {
@@ -21,6 +24,14 @@ const Nav = () => {
     // { name: 'Settings', href: '#' },
     { name: 'Sign out', href: '#' },
   ];
+
+  const { isAuthenticated, logout } = useMoralis();
+  const router = useRouter();
+
+  useEffect(() => {
+    if (!isAuthenticated) router.replace('/');
+  }, [isAuthenticated]);
+
   return (
     <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
@@ -35,6 +46,9 @@ const Nav = () => {
                     </a>
                   </Link>
                 </div>
+                <button className="hover:underline" onClick={logout}>
+                  Sign Out
+                </button>
                 <div className="hidden md:block">
                   <div className="ml-10 flex items-baseline space-x-4">
                     {navigation.map((item) => (
