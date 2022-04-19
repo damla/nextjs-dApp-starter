@@ -1,4 +1,5 @@
 export const classNames = (...classes: string[]) => {
+  // to merge conditional classes in styling
   return classes.filter(Boolean).join(' ');
 };
 
